@@ -7,7 +7,7 @@ class tbprofiler_server:
     def send_fastq(self,fq1,fq2=None,platform="illumina"):
         files = {
             "file1":open(fq1,"rb"),
-            "file2":open(fq2,"rb") if fq2 else ""
+            "file2":open(fq2,"rb") if fq2 else None
         }
         data = {"platform":platform,"single_sample_submit":""}
         print("%(host)s/upload" % vars(self),files,data)
